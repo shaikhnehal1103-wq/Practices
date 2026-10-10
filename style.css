@@ -42,8 +42,7 @@ body {
   cursor: pointer;
   transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* dark fade on the left so the text stays readable */
+ 
 .item::before {
   content: "";
   position: absolute;
@@ -54,7 +53,6 @@ body {
   transition: opacity 0.6s;
 }
 
-/* first two are full screen, the first one just sits behind */
 .item:nth-child(1),
 .item:nth-child(2) {
   top: 0;
@@ -135,7 +133,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* only a starting point: if animations don't run, the text is simply visible */
 @keyframes rise {
   from {
     opacity: 0;
@@ -143,8 +140,6 @@ body {
     filter: blur(14px);
   }
 }
-
-/* arrows + counter */
 .controls {
   position: absolute;
   left: var(--pad);
@@ -205,8 +200,7 @@ body {
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.8);
 }
-
-/* phones: cards move to the bottom right */
+ 
 @media (max-width: 700px) {
   :root {
     --pad: 20px;
