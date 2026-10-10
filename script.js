@@ -6,7 +6,6 @@ const counter = document.querySelector('.counter');
 const AUTO_DELAY = 6000;
 let timer = null;
 
-// the 2nd item in the list is always the one on screen
 function updateCounter() {
   const items = slide.querySelectorAll('.item');
   const current = items[1].dataset.index.padStart(2, '0');
@@ -28,7 +27,6 @@ function goPrev() {
 
 const bar = document.querySelector('.bar');
 
-// restart the little progress bar from zero
 function restartBar() {
   bar.classList.remove('run');
   void bar.offsetWidth;
@@ -58,8 +56,6 @@ prevBtn.addEventListener('click', () => {
   goPrev();
   startAuto();
 });
-
-// clicking one of the small cards brings it to the front
 slide.addEventListener('click', (e) => {
   const clicked = e.target.closest('.item');
   if (!clicked) return;
@@ -74,7 +70,7 @@ slide.addEventListener('click', (e) => {
   startAuto();
 });
 
-// arrow keys
+
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') {
     goNext();
@@ -86,7 +82,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// swipe on phones
+
 let touchX = 0;
 
 slide.addEventListener('touchstart', (e) => {
